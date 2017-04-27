@@ -18,6 +18,7 @@ public class Producto {
     private String[] imagen;
     private double precio;
     private double iva;
+    private int piezas;
 
     public String getNum() {
         return num;
@@ -81,6 +82,14 @@ public class Producto {
 
     public void setIva(double iva) {
         this.iva = iva;
+    }
+    
+    public int getPiezas() {
+        return piezas;
+    }
+
+    public void setPiezas(int piezas) {
+        this.piezas = piezas;
     }
     
 }
