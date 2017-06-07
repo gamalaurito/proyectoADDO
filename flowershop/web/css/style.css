@@ -2459,3 +2459,12 @@ a.add-cart {
   margin-top: 0;
 }
 }
+.imagen-prod {
+    width: 300px !important;
+    height: 300px !important;
+}
+
+.imagen-home {
+    width: 350px !important;
+    height: 214px !important;
+}

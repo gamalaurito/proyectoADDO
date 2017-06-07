@@ -10,18 +10,19 @@ package bean;
  * @author gama
  */
 public class Categoria {
-    private String num;
+    
+    private String cateNum;
     private String nombre;
     private String desc;
-    private char estatus;
-    private String fecha;
+    private String estatus;
+    private String fechaCrea;
 
-    public String getNum() {
-        return num;
+    public String getCateNum() {
+        return cateNum;
     }
 
-    public void setNum(String num) {
-        this.num = num;
+    public void setCateNum(String cateNum) {
+        this.cateNum = cateNum;
     }
 
     public String getNombre() {
@@ -40,19 +41,22 @@ public class Categoria {
         this.desc = desc;
     }
 
-    public char getEstatus() {
+    public String getEstatus() {
         return estatus;
     }
 
-    public void setEstatus(char estatus) {
+    public void setEstatus(String estatus) {
         this.estatus = estatus;
     }
 
-    public String getFecha() {
-        return fecha;
+    public String getFechaCrea() {
+        return fechaCrea;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setFechaCrea(String fechaCrea) {
+        this.fechaCrea = fechaCrea;
     }
+    
+    
+    
 }

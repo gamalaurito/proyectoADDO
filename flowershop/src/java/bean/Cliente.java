@@ -10,22 +10,20 @@ package bean;
  * @author gama
  */
 public class Cliente {
-    private int num;
+    private int numCliente;
     private String nombre;
     private String email;
-    private String registro;
-    private String primerC;
-    private String ultimaC;
-    private int numCs;
-    private double totalC;
-    private char clase;
+    private String password;
+    private String fechaIngreso;
+    private String telefono;
+    private String mobile;
 
-    public int getNum() {
-        return num;
+    public int getNumCliente() {
+        return numCliente;
     }
 
-    public void setNum(int num) {
-        this.num = num;
+    public void setNumCliente(int numCliente) {
+        this.numCliente = numCliente;
     }
 
     public String getNombre() {
@@ -44,52 +42,40 @@ public class Cliente {
         this.email = email;
     }
 
-    public String getRegistro() {
-        return registro;
+    public String getPassword() {
+        return password;
     }
 
-    public void setRegistro(String registro) {
-        this.registro = registro;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getPrimerC() {
-        return primerC;
+    public String getFechaIngreso() {
+        return fechaIngreso;
     }
 
-    public void setPrimerC(String primerC) {
-        this.primerC = primerC;
+    public void setFechaIngreso(String fechaIngreso) {
+        this.fechaIngreso = fechaIngreso;
     }
 
-    public String getUltimaC() {
-        return ultimaC;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setUltimaC(String ultimaC) {
-        this.ultimaC = ultimaC;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public int getNumCs() {
-        return numCs;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setNumCs(int numCs) {
-        this.numCs = numCs;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
-
-    public double getTotalC() {
-        return totalC;
-    }
-
-    public void setTotalC(double totalC) {
-        this.totalC = totalC;
-    }
-
-    public char getClase() {
-        return clase;
-    }
-
-    public void setClase(char clase) {
-        this.clase = clase;
+    
+    public String toString() {
+        return "Cliente Num: " + this.numCliente + "\n fecha Ingreso: " + this.fechaIngreso;
     }
     
 }

@@ -16,11 +16,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<%} else {%>
 		<%@include file="header.jsp"%>
         <%}%>
-
         <!---->
                <%@include file="menu.jsp"%>
         <!---->
-			 
 <!---->
 <div id="content">
     <div class="banner">
@@ -31,14 +29,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="welcome">
              <div class="container" >
                      <div class="col-md-3 welcome-left">
-                             <h2>Welcome to our site</h2>
+                             <h2>Bienvenido a nuestro sitio</h2>
                      </div>
                      <div class="col-md-9 welcome-right">
-                             <h3>Proin ornare massa eu enim pretium efficitur.</h3>
-                             <p>Etiam fermentum consectetur nulla, sit amet dapibus orci sollicitudin vel.
-                             Nulla consequat turpis in molestie fermentum. In ornare, tellus non interdum ultricies, elit
-                             ex lobortis ex, aliquet accumsan arcu tortor in leo. Nullam molestie elit enim. Donec ac
-                             aliquam quam, ac iaculis diam. Donec finibus scelerisque erat, non convallis felis commodo ac.</p>
+                             <h3>Floreria Jamaica.</h3>
+                            <p>
+                                Desde 1990 acompañandote en tus momentos mas importantes.
+                                Sabemos que en cada arreglo se transmiten grandes sentimientos y emociones.
+                                Nos gusta romper la barrera de la distancia y hacer llegar detalles a personas especiales que deseas sorprender.
+                                Nos alimenta recibir sonrisas cuando nos permites a través de nuestro servicio, ser parte de tu historia.     
+                            </p>
                      </div>
              </div>
     </div>
@@ -46,64 +46,65 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="bride-grids">
              <div class="container">
                      <div class="col-md-4 bride-grid">
-                             <div class="content-grid l-grids">
-                                     <figure class="effect-bubba">
-                                                    <img src="images/b1.jpg" alt=""/>
+                             <div class="content-grid l-grids" onclick = "getArticulos(-100,'rosa')">
+                                    <figure class="effect-bubba">
+                                                    <img src="images/corazonRosas.jpg" alt="" class = "imagen-home"/>
                                                     <figcaption>
-                                                            <h4>Nullam molestie </h4>
-                                                            <p>In sit amet sapien eros Integer in tincidunt labore et dolore magna aliqua</p>
+                                                            <h4>Rosas</h4>
+                                                            <p>Para esa persona que camina a tu lado en esta vida.</p>
                                                     </figcaption>
-                                     </figure>
-                                     <div class="clearfix"></div>
-                                     <h3>Wedding Dresses</h3>
+                                    </figure>
+                                    <div class="clearfix"></div>
+                                    <h3>Rosas</h3>
                              </div>
-                             <div class="content-grid l-grids">
+                             <div class="content-grid l-grids" onclick = "getArticulos(-100,'ramo')">
                                      <figure class="effect-bubba">
-                                                    <img src="images/b2.jpg" alt=""/>
+                                                    <img src="images/ramoRosasRojas.jpg" class="imagen-home" alt=""/>
                                                     <figcaption>
-                                                            <h4>Nullam molestie </h4>
-                                                            <p>In sit amet sapien eros Integer in tincidunt labore et dolore magna aliqua</p>
+                                                            <h4>Ramos </h4>
+                                                            <p>Para ese dia tan importante en tu vida.</p>
                                                     </figcaption>
                                      </figure>
                                      <div class="clearfix"></div>
-                                     <h3>BridalParty & Dresses</h3>
+                                     <h3>Ramos</h3>
                              </div>
                      </div>
                      <div class="col-md-4 bride-grid">
-                                    <div class="content-grid l-grids">
-                                                    <img src="images/brid.jpg" alt=""/>
-
-                                     <h3>Bridesmaid Dresses</h3>
-                             </div>
+                            <div class="clearfix"></div>
+                            <div class="content-grid l-grids">
+                                <img src="images/floreriajamaica.png" alt=""/>
+                                <h2>&nbsp;&nbsp;Floreria Jamaica</h2>
+                            </div>
                      </div>
                      <div class="col-md-4 bride-grid">
-                             <div class="content-grid l-grids">
+                             <div class="content-grid l-grids" onclick = "getArticulos(-100,'figura')">
                                      <figure class="effect-bubba">
-                                                    <img src="images/b3.jpg" alt=""/>
+                                                    <img src="images/perrito2.jpg" class ="imagen-home" alt=""/>
                                                     <figcaption>
-                                                            <h4>Nullam molestie </h4>
-                                                            <p>In sit amet sapien eros Integer in tincidunt labore et dolore magna aliqua</p>
+                                                            <h4>Figuras</h4>
+                                                            <p>Para robarle una sonrisa a alguien.</p>
                                                     </figcaption>
                                      </figure>
                                      <div class="clearfix"></div>
-                                     <h3>Wedding</h3>
+                                     <h3>Figuras</h3>
                              </div>
-                             <div class="content-grid l-grids">
+                             <div class="content-grid l-grids" onclick = "getArticulos(-100,'corona')">
                                      <figure class="effect-bubba">
-                                                    <img src="images/b4.jpg" alt=""/>
+                                                    <img src="images/corona2.jpg" class ="imagen-home" alt=""/>
                                                     <figcaption>
-                                                            <h4>Nullam molestie </h4>
-                                                            <p>In sit amet sapien eros Integer in tincidunt labore et dolore magna aliqua</p>
+                                                            <h4>Coronas </h4>
+                                                            <p>Para decir adios</p>
                                                     </figcaption>
                                      </figure>
                                             <div class="clearfix"></div>
-                                     <h3>Most Beautiful</h3>
+                                     <h3>Coronas</h3>
                              </div>
                      </div>
                      <div class="clearfix"></div>
              </div>
     </div>
     <!---->
+    <!--
     <div class="featured">
              <div class="container">
                      <h3>Featured Products</h3>
@@ -235,7 +236,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                      </div>
              </div>
     </div>
+    -->
     <!---->
+    <!--
     <div class="arrivals">
              <div class="container">
                      <h3>New Arrivals</h3>
@@ -332,6 +335,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                       </div>
              </div>
     </div>
+    -->
 </div>
 <%@include file='footer.jsp'%>
 </body>

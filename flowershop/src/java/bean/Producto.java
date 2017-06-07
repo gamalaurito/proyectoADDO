@@ -5,27 +5,30 @@
  */
 package bean;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author gama
  */
 public class Producto {
-    private String num;
+    
+    private String prodNum;
     private String nombre;
     private String desc;
-    private String date;
-    private char estatus;
-    private String[] imagen;
+    private String fechaCrea;
+    private int piezas;
+    private String estatus;
+    private ArrayList<Imagen> imagenes;
     private double precio;
     private double iva;
-    private int piezas;
 
-    public String getNum() {
-        return num;
+    public String getProdNum() {
+        return prodNum;
     }
 
-    public void setNum(String num) {
-        this.num = num;
+    public void setProdNum(String prodNum) {
+        this.prodNum = prodNum;
     }
 
     public String getNombre() {
@@ -44,28 +47,36 @@ public class Producto {
         this.desc = desc;
     }
 
-    public String getDate() {
-        return date;
+    public String getFechaCrea() {
+        return fechaCrea;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setFechaCrea(String fechaCrea) {
+        this.fechaCrea = fechaCrea;
     }
 
-    public char getEstatus() {
+    public int getPiezas() {
+        return piezas;
+    }
+
+    public void setPiezas(int piezas) {
+        this.piezas = piezas;
+    }
+
+    public String getEstatus() {
         return estatus;
     }
 
-    public void setEstatus(char estatus) {
+    public void setEstatus(String estatus) {
         this.estatus = estatus;
     }
 
-    public String[] getImagen() {
-        return imagen;
+    public ArrayList<Imagen> getImagenes() {
+        return imagenes;
     }
 
-    public void setImagen(String[] imagen) {
-        this.imagen = imagen;
+    public void setImagenes(ArrayList<Imagen> imagenes) {
+        this.imagenes = imagenes;
     }
 
     public double getPrecio() {
@@ -84,12 +95,6 @@ public class Producto {
         this.iva = iva;
     }
     
-    public int getPiezas() {
-        return piezas;
-    }
-
-    public void setPiezas(int piezas) {
-        this.piezas = piezas;
-    }
+    
     
 }

@@ -10,30 +10,32 @@ package bean;
  * @author gama
  */
 public class Direccion {
-    private int num;
-    private String nombre;
+    
+    private Cliente cliente;
+    private int dirNum;
     private String calle;
     private String colonia;
-    private String cod_pos;
+    private String codPos;
+    private String ciudad;
+    private String estado;
     private String contacto;
     private String telefono;
-    private char estatus;
     private String observaciones;
 
-    public int getNum() {
-        return num;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setNum(int num) {
-        this.num = num;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
-    public String getNombre() {
-        return nombre;
+    public int getDirNum() {
+        return dirNum;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setDirNum(int dirNum) {
+        this.dirNum = dirNum;
     }
 
     public String getCalle() {
@@ -52,12 +54,28 @@ public class Direccion {
         this.colonia = colonia;
     }
 
-    public String getCod_pos() {
-        return cod_pos;
+    public String getCodPos() {
+        return codPos;
     }
 
-    public void setCod_pos(String cod_pos) {
-        this.cod_pos = cod_pos;
+    public void setCodPos(String codPos) {
+        this.codPos = codPos;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getContacto() {
@@ -76,14 +94,6 @@ public class Direccion {
         this.telefono = telefono;
     }
 
-    public char getEstatus() {
-        return estatus;
-    }
-
-    public void setEstatus(char estatus) {
-        this.estatus = estatus;
-    }
-
     public String getObservaciones() {
         return observaciones;
     }
@@ -91,5 +101,6 @@ public class Direccion {
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
     }
-    
+
+       
 }

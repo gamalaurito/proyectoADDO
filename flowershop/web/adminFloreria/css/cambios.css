@@ -1,0 +1,293 @@
+#content {
+  min-height: 600px;
+}
+
+.sidenav {
+    background-color: #111;
+    height: 100%;
+}
+
+.sidenav a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    padding: 8px 8px 8px 32px;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#profile-edit, #profile-info {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.android-image-profile {
+  height: 220px;
+  width: 220px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.section-login {
+  padding-top: 100px; 
+  padding-left: 300px;
+}
+
+.h1-login {
+  padding-left: 200px; 
+}
+
+.android-image-login {
+  height: 239px;
+  width: 305px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.android-image-change {
+    padding-left: 110px; 
+}
+
+.android-profile-profile {
+    padding-left: 100px; 
+}
+
+.info-profile {
+  margin-left: 10px;
+}
+
+.info-profile h4 {
+  margin-top: 0;
+  margin-bottom: 10px; 
+}
+.info-profile span {
+  margin-top: 20px;
+}
+
+.answer {
+  padding-left: 25px;
+  padding-right: 5px;
+  padding-top: 5px;
+  font-size: 20px;
+}
+
+.android-back-data {
+  margin-bottom: 30px;
+  padding-left: 250px;
+}
+
+.android-update-profile {
+  padding-left: 125px;
+}
+/* form starting stylings ------------------------------- */
+
+#content .group        { 
+  position:relative;
+  margin-left: 5px;
+  margin-bottom:25px; 
+}
+#content input{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:250px;
+  border:none;
+  border-bottom:1px solid #757575;
+  background: transparent;
+}
+#content input.form:focus     { outline:none; }
+
+/* LABEL ======================================= */
+#content label          {
+  color:#999; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+#content input.form:focus ~ label, #content input:valid ~ label    {
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+#content .bar  { position:relative; display:block; width:250px; }
+#content .bar:before, #content .bar:after   {
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+#content .bar:before {
+  left:50%;
+}
+#content .bar:after {
+  right:50%; 
+}
+
+/* active state */
+#content input.form:focus ~ .bar:before, #content input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+#content .highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+#content input.form:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from { background:#5264AE; }
+  to  { width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+  from { background:#5264AE; }
+  to  { width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+  from { background:#5264AE; }
+  to  { width:0; background:transparent; }
+}
+
+#content textarea {
+  font-size:18px;
+  padding:5px 5px 5px 5px;
+  display:block;
+  width:100%;
+  height: 87px;
+  border:none;
+  background: transparent;
+}
+
+/* form starting stylings ------------------------------- */
+#content .glosary        { 
+  position:relative; 
+  margin-bottom:5px; 
+}
+#content input.word {
+  font-size:18px;
+  padding:5px 5px 5px 5px;
+  display:block;
+  width:100%;
+  border:none;
+  border-bottom:1px solid #757575;
+  background: transparent;
+}
+#content input:focus     { outline:none; }
+
+/* BOTTOM BARS ================================= */
+#content .glosary-bar  { position:relative; display:block; width:100%; }
+#content .glosary-bar:before, #content .glosary-bar:after   {
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+#content .glosary-bar:before {
+  left:50%;
+}
+#content .glosary-bar:after {
+  right:50%; 
+}
+
+/* active state */
+#content input:focus ~ .glosary-bar:before, #content input:focus ~ .glosary-bar:after {
+  width:50%;
+}
+
+#content input.edita-color {
+  margin-bottom: 5px;
+  border-radius: 2px 2px 2px 2px;
+  padding: 0 0 0 0;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.material-icons.md-18 {font-size: 18px;}
+.material-icons.md-24 {font-size: 24px;}
+.material-icons.md-36 {font-size: 36px;}
+.material-icons.md-48 {font-size: 48px;}
+.sidenav a.md-18 {font-size: 9px;}
+.sidenav a.md-24 {font-size: 12px;}
+.sidenav a.md-36 {font-size: 18px;}
+.sidenav a.md-48 {font-size: 24px;}
+
+.glosario-accion {
+  padding-left: 25%;
+}
+
+#profile-edit {
+  display : none;
+}
+
+.table-file-name {
+  max-width: 100px;
+}
+
+.login {
+  width: 300px;
+  height: 100px;
+  padding-bottom: 10px;
+}
+
+.login-button {
+  background: #DA5555;
+  border-color: #DA5555;
+  color: white;
+  padding-top: 10px;
+  border-collapse: 0px;
+  border-radius: 50px;
+  font-size: 18px;
+}
+
+
+#form-login {
+  background: #EB8B8B;
+}

@@ -5,13 +5,16 @@
  */
 package bean;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author gama
  */
 public class Catalogo {
+    
     private Categoria categoria;
-    private Producto[] productos;
+    private ArrayList<Producto> productos;
 
     public Categoria getCategoria() {
         return categoria;
@@ -21,11 +24,11 @@ public class Catalogo {
         this.categoria = categoria;
     }
 
-    public Producto[] getProductos() {
+    public ArrayList<Producto> getProductos() {
         return productos;
     }
 
-    public void setProductos(Producto[] productos) {
+    public void setProductos(ArrayList<Producto> productos) {
         this.productos = productos;
     }
     

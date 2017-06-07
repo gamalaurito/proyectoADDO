@@ -5,12 +5,17 @@
  */
 package flowerShop;
 
+import bean.Carrito;
+import bean.Cliente;
+import dao.ClienteDAO;
+import dao.ConexionDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -29,14 +34,31 @@ public class login extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String user = request.getParameter("user");
-        String pass = request.getParameter("pass");
-        System.out.println("User: " + user);
-        System.out.println("Password: " + pass);
-        request.getSession().setAttribute("active", true);
-        request.getSession().setAttribute("name", user);
-        System.out.println("Attribute setted");
-        response.sendRedirect("index.jsp");
+        HttpSession session = request.getSession();
+        boolean ban = session.getAttribute("active")!=null;
+        if(ban) {
+            response.sendRedirect("index.jsp");
+        } else {
+            String user = request.getParameter("user");
+            String pass = request.getParameter("pass");
+            ClienteDAO clienteDAO = new ClienteDAO();
+            String message;
+            Cliente cliente = clienteDAO.inicioSesion(user, pass);
+            if(cliente == null) {
+                message = "Error";
+            } else {
+                session.setAttribute("cliente", cliente);
+                session.setAttribute("active", true);
+                Carrito carrito = (Carrito)session.getAttribute("carrito");
+                carrito.setClienteNum(cliente.getNumCliente());
+                carrito.setDirNum(clienteDAO.checkDireccion(cliente));
+                session.removeAttribute("carrito");
+                session.setAttribute("carrito", carrito);
+                message = "Exito";
+            }
+            clienteDAO.Destroy();
+            response.sendRedirect("index.jsp");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

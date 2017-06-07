@@ -5,60 +5,87 @@
  */
 package bean;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author gama
  */
 public class Pedido {
-    private String num;
-    private String fecha;
-    private char clase;
-    private String observaciones;
-    private double importe;
+    
+    private int pedidoNum;
+    private Direccion direccion;
+    private String estatus;
+    private String estatusEnvio;
+    private String fechaPed;
+    private String fechaEntre;
+    private String pedidoTipo;
+    private double total;
     private double iva;
-    private char estatus;
-    private char est_envio;
-    private char entrega;
-    private Producto productos[];
+    private ArrayList<PedidoDetalle> detalle;
 
-    public String getNum() {
-        return num;
+    public int getPedidoNum() {
+        return pedidoNum;
     }
 
-    public void setNum(String num) {
-        this.num = num;
+    public void setPedidoNum(int pedidoNum) {
+        this.pedidoNum = pedidoNum;
     }
 
-    public String getFecha() {
-        return fecha;
+    public Direccion getDireccion() {
+        return direccion;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
     }
 
-    public char getClase() {
-        return clase;
+    public String getEstatus() {
+        return estatus;
     }
 
-    public void setClase(char clase) {
-        this.clase = clase;
+    public void setEstatus(String estatus) {
+        this.estatus = estatus;
     }
 
-    public String getObservaciones() {
-        return observaciones;
+    public String getEstatusEnvio() {
+        return estatusEnvio;
     }
 
-    public void setObservaciones(String observaciones) {
-        this.observaciones = observaciones;
+    public void setEstatusEnvio(String estatusEnvio) {
+        this.estatusEnvio = estatusEnvio;
     }
 
-    public double getImporte() {
-        return importe;
+    public String getFechaPed() {
+        return fechaPed;
     }
 
-    public void setImporte(double importe) {
-        this.importe = importe;
+    public void setFechaPed(String fechaPed) {
+        this.fechaPed = fechaPed;
+    }
+
+    public String getFechaEntre() {
+        return fechaEntre;
+    }
+
+    public void setFechaEntre(String fechaEntre) {
+        this.fechaEntre = fechaEntre;
+    }
+
+    public String getPedidoTipo() {
+        return pedidoTipo;
+    }
+
+    public void setPedidoTipo(String pedidoTipo) {
+        this.pedidoTipo = pedidoTipo;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
     }
 
     public double getIva() {
@@ -69,36 +96,12 @@ public class Pedido {
         this.iva = iva;
     }
 
-    public char getEstatus() {
-        return estatus;
+    public ArrayList<PedidoDetalle> getDetalle() {
+        return detalle;
     }
 
-    public void setEstatus(char estatus) {
-        this.estatus = estatus;
-    }
-
-    public char getEst_envio() {
-        return est_envio;
-    }
-
-    public void setEst_envio(char est_envio) {
-        this.est_envio = est_envio;
-    }
-
-    public char getEntrega() {
-        return entrega;
-    }
-
-    public void setEntrega(char entrega) {
-        this.entrega = entrega;
-    }
-
-    public Producto[] getProductos() {
-        return productos;
-    }
-
-    public void setProductos(Producto[] productos) {
-        this.productos = productos;
+    public void setDetalle(ArrayList<PedidoDetalle> detalle) {
+        this.detalle = detalle;
     }
     
 }

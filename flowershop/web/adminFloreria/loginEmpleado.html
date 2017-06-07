@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="Admin Jamaica">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Floraria Jamaica</title>
+
+		<!-- Estilos -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=es" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="css/material.min.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/cambios.css">
+		<link rel="stylesheet" href="css/mdl-jquery-modal-dialog.css">
+	</head>
+	<body>
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		<div class="android-content mdl-layout__content" id = "container">
+			<div id = "content">
+        		<div class="android-more-section section-login">
+                    <div class="android-section-title mdl-typography--display-1-color-contrast h1-login">Log in</div>
+                    <div class = "mdl-grid">
+                        <!--photo-->
+                        <div class = "mdl-cell mdl-cell--3-col mdl-cell--3-col-tablet mdl-cell--3-col-phone">
+                            <img src = "images/floreria-logo.png" class = "android-image-login">
+                            </br>
+                        </div>
+                        <!--edit profile-->
+                        <div class = "mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--6-col-phone" id = "login">
+                            <form id = "login" name = "login" method = "post" action = "admminLogin">
+                                <div class="group">         
+                                    <input type="text" class = "form" id = "usuario" name = "usuario" value = "" required>
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Usuario</label>
+                                </div>
+                                <div class="group">         
+                                    <input type="password" class = "form" id = "pass" name = "pass" value = "" required>
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Password</label>
+                                </div>           
+                                <span onclick = "loginEmpleado()" class = "android-update-profile">
+                                    <i class = "material-icons android-profile-edit">send</i>Log in
+                                </span>
+                            </form>
+                        </div>
+                        <!--edit profile-->
+                    </div>
+                </div>
+            </div>
+        </div>
+		<script src="js/material.min.js"></script>
+		<script src="js/jquery-1.11.3.js"></script>
+		<script src="js/mdl-jquery-modal-dialog.js"></script>
+		<script src="js/jamaica.js"></script>
+		<script src="js/eq_editor-lite-18.js"></script>
+		<script src="js/eq_config.js"></script>
+	</body>
+</html>

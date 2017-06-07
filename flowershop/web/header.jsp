@@ -10,8 +10,8 @@
 			</div>
 			<div class="top_left">
 				<ul>
-					<li class="top_link" onclick = "action('singup')"><a>Registrarse</a></li>
-					<li class="top_link" onclick = "action('login')"><a>Iniciar Session</a></li>
+					<li class="top_link"><a href="registro.jsp">Registrarse</a></li>
+					<li class="top_link"><a href="login.jsp">Iniciar Session</a></li>
 				</ul>
 			</div>
 				<div class="clearfix"> </div>
