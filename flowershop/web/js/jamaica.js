@@ -206,11 +206,53 @@ function vaciarCarrito() {
             }
         },
         success: function(datos) {
-            alert("Compra realizada");
             window.location = "index.jsp";
         },
         complete : function() {
             //window.componentHandler.upgradeDom();
+            console.log(name);
+        }
+    });
+}
+
+function trackPedido() {
+    $.ajax({
+         type: 'POST',
+         url: 'setPedido',
+         statusCode: {
+             404: function() {
+                     alert('Alerta ');
+             },
+             500: function(){
+                     alert('Error oooohh');
+             }
+         },
+         success: function(datos) {
+            if(datos.startsWith("Exito"))window.location = "trackorder.jsp";
+            else alert("No tiene pedidos disponibles");
+         },
+         complete : function() {
+             console.log(name);
+         }
+     }); 
+}
+
+function cerrarSesion() {
+    $.ajax({
+        type: 'POST',
+        url: 'logout',
+        statusCode: {
+            404: function() {
+                    alert('Alerta ');
+            },
+            500: function(){
+                    alert('Error oooohh');
+            }
+        },
+        success: function(datos) {
+            window.location = "index.jsp";
+        },
+        complete : function() {
             console.log(name);
         }
     });
@@ -231,3 +273,4 @@ function camForPag(x) {
     $('#'+x).removeClass("label-info");
     $('#'+x).addClass("label-success");
 }
+

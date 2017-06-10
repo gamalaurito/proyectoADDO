@@ -5,22 +5,21 @@
  */
 package flowerShop;
 
-import bean.Carrito;
 import bean.Cliente;
-import dao.ClienteDAO;
-import dao.ConexionDAO;
+import dao.PedidoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author gama
  */
-public class registroCliente extends HttpServlet {
+public class setPedido extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,28 +32,20 @@ public class registroCliente extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Cliente cliente = new Cliente();
-        cliente.setNombre(request.getParameter("nombre"));
-        cliente.setEmail(request.getParameter("email"));
-        cliente.setPassword(request.getParameter("password"));
-        cliente.setTelefono(request.getParameter("telefono"));
-        cliente.setMobile(request.getParameter("mobile"));
-        ClienteDAO clienteDAO = new ClienteDAO();
-        cliente = clienteDAO.registraCliente(cliente);
-        String message;
-        if(cliente == null) {
-            message = "Error";
-        } else {
-            request.getSession().setAttribute("cliente", cliente);
-            request.getSession().setAttribute("active", true);
-            Carrito carrito = (Carrito)request.getSession().getAttribute("carrito");
-            carrito.setClienteNum(cliente.getNumCliente());
-            request.getSession().removeAttribute("carrito");
-            request.getSession().setAttribute("carrito", carrito);
+        HttpSession session = request.getSession();
+        PedidoDAO pedDAO = new PedidoDAO();
+        String message = "Error";
+        Cliente cli = (Cliente)session.getAttribute("cliente");
+        int pedido = pedDAO.getPedido(cli);
+        if(pedido != 0) {
             message = "Exito";
         }
-        clienteDAO.Destroy();
-        response.sendRedirect("index.jsp");
+        session.removeAttribute("pedido");
+        session.setAttribute("pedido", pedido);
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            out.print(message);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -69,7 +60,7 @@ public class registroCliente extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
+        processRequest(request, response);
     }
 
     /**

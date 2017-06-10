@@ -48,6 +48,7 @@ public class ClienteDAO {
             }
         } catch(SQLException e) {
             e.printStackTrace();
+            cliente = null;
         } finally {
             try {
                 if(pstmt != null) pstmt.close();

@@ -5,22 +5,19 @@
  */
 package flowerShop;
 
-import bean.Carrito;
-import bean.Cliente;
-import dao.ClienteDAO;
-import dao.ConexionDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author gama
  */
-public class registroCliente extends HttpServlet {
+public class logout extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,27 +30,8 @@ public class registroCliente extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Cliente cliente = new Cliente();
-        cliente.setNombre(request.getParameter("nombre"));
-        cliente.setEmail(request.getParameter("email"));
-        cliente.setPassword(request.getParameter("password"));
-        cliente.setTelefono(request.getParameter("telefono"));
-        cliente.setMobile(request.getParameter("mobile"));
-        ClienteDAO clienteDAO = new ClienteDAO();
-        cliente = clienteDAO.registraCliente(cliente);
-        String message;
-        if(cliente == null) {
-            message = "Error";
-        } else {
-            request.getSession().setAttribute("cliente", cliente);
-            request.getSession().setAttribute("active", true);
-            Carrito carrito = (Carrito)request.getSession().getAttribute("carrito");
-            carrito.setClienteNum(cliente.getNumCliente());
-            request.getSession().removeAttribute("carrito");
-            request.getSession().setAttribute("carrito", carrito);
-            message = "Exito";
-        }
-        clienteDAO.Destroy();
+        HttpSession session = request.getSession();
+        session.invalidate();
         response.sendRedirect("index.jsp");
     }
 
@@ -69,7 +47,7 @@ public class registroCliente extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
+        processRequest(request, response);
     }
 
     /**
